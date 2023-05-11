@@ -184,23 +184,10 @@ dataListItems.addEventListener("click", (event) => {
     dataListDescription.textContent = active.description
 })
 
-/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-
-// dataListButton = `Show more ${(books.length - BOOKS_PER_PAGE)}`
-// dataListButton.disabled == !(matches.length - (page * BOOKS_PER_PAGE) > 0)
 
 dataListButton.innerHTML = /* html */ 
     `<span> Show more </span>
     <span class="list__remaining"> (${matches.length - (page * BOOKS_PER_PAGE) > 0 ? matches.length - (page * BOOKS_PER_PAGE) : 0})</span>`
-
-// dataListButton.addEventListener("click", () => {
-//     button = document.querySelector(dataListItems.appendChild(createPreviewFragment(matches.length, page * BOOKS_PER_PAGE, (page + 1) * BOOKS_PER_PAGE)))
-//     actions.list.updateRemaining()
-//     page = page + 1
-// })
-
-/**---------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 dataHeaderSearch.addEventListener("click", () => {                  //opens seacrhbar and focuses on title 
     dataSearchTitle.focus()
@@ -211,91 +198,3 @@ dataSearchCancel.addEventListener("click", () => {                 //"cancel" cl
     dataSearchOverlay.close()
   
 })
-
-// //more books
-// const range = [0, BOOKS_PER_PAGE]
-// if (!books && !Array.isArray(books)){
-//     throw new Error('Source required') 
-// } 
-// if (!range && range.length < 2){
-//     throw new Error('Range must be an array with two numbers')
-// }
-
-
-// dataSearchForm.addEventListener("submit", (event) => {
-//     event.preventDefault()
-//     const formData = new FormData(event.target)
-//     const filters = Object.fromEntries(formData)
-//     const result = []
-
-//     for (let book of booksList.length) {
-//          let titleMatch = filters.title.trim() = '' && book.title.toLowerCase().includes[filters.title.toLowerCase()]
-//          let authorMatch = filters.author = 'any' || book.author === filters.author
-        
-        
-//             const genreMatch = filters.genre = 'any'
-//             for (let genres of book.genres) { 
-//                 if (singleGenre == filters.genre){
-//                      genreMatch = true 
-//                     }
-//                 }
-//             }
-
-//         if (titleMatch && authorMatch && genreMatch){
-//             result.push(book)
-//         }
-
-//     if(display.length < 1 ){
-//         dataListMessage.class.add('list__message_show')
-//      } else {
-//         dataListMessage.class.remove('list__message_show')
-//     }
-//     return result
-// })
-
-    
-
-    // dataListItems.innerHTML = ''
-    //  const fragment2 = document.createDocumentFragment()
-    //  const extracted2 = books.slice(0,36)
-    
-    // for (let i = 0; i < extracted2.length; i++ ) {
-    //     const { author: authorId, id, image, title } = extracted2[i]
-    
-    //    const morebooks = document.createElement('button') 
-    //    morebooks.classList = 'preview'
-    //    morebooks.setAttribute('data-preview', id)
-    
-    //    morebooks.innerHTML = /* html */ `
-    //         <img
-    //             class="preview__image"
-    //             src="${image}"
-    //         />
-            
-    //         <div class="preview__info">
-    //             <h3 class="preview__title">${title}</h3>
-    //             <div class="preview__author">${authors[authorId]}</div>
-    //         </div>
-    //     `
-      
-    //     fragment2.appendChild(morebooks)
-    // }
-    // dataListItems.appendChild(fragment2)
-    
-   
-    // const hasRemaining = true
-    // const fragment3 = document.createDocumentFragment() 
-    // dataListItems.appendChild(fragment3)
-
-    // const initial = matches.length - (page * BOOKS_PER_PAGE)
-    // const remaining = (initial >= 0 && hasRemaining) ? initial : 0
-    
-    // dataListButton.disabled = (remaining <= 0)
-
-    // dataListButton.innerHTML = /* html */ `
-    //     <span>Show more</span>
-    //     <span class="list__remaining"> (${remaining})</span>
-    // `
-
-    // window.scrollTo({ top: 0, behavior: 'smooth' });
-    // dataSearchOverlay.open = false
